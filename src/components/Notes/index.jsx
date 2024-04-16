@@ -1,15 +1,15 @@
 import { Container } from './styles'
 import { Tag } from '../Tag'
 
-export function Notes({ data, ...rest}){
-  return(
+export function Notes({ data, ...rest }) {
+  return (
     <Container {...rest}>
-      <h1>{data.name}</h1>
+      <h1>{data.title}</h1>
 
       {
         data.tags && <footer>
           {
-            data.tags.map( tag=> <Tag name={tag.name} key={tag.id}/>)
+            data.tags.map(tag => <Tag key={tag.id} title={tag.name} />)
           }
         </footer>
       }

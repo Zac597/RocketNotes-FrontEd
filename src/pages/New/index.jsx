@@ -53,14 +53,14 @@ export function New() {
       return alert("Você deixou uma tag no campo para adicionar, mas não clicou em adicionar. Clique para adionar ou deixe o campo vazio")
     }
 
-    if (newTag) {
-      return alert("Você deixou uma tag no campo para adicionar, mas não clicou em adicionar. Clique para adionar ou deixe o campo vazio")
+    if (newLink) {
+      return alert("Você deixou um link no campo para adicionar, mas não clicou em adicionar. Clique para adionar ou deixe o campo vazio")
     }
     await api.post("/notes", {
       title,
       description,
-      tags,
-      links
+      links,
+      tags
     })
     alert("Nota criada com sucesso!")
     navigate("/")
@@ -82,7 +82,7 @@ export function New() {
           />
           <Textarea
             placeholder="Observações"
-            onChange={e => setTitle(e.target.value)}
+            onChange={e => setDescription(e.target.value)}
           />
 
           <Section name="Links úteis">
@@ -124,7 +124,7 @@ export function New() {
             </div>
           </Section>
           <Button
-            name="Salvar"
+            title="Salvar"
             onClick={handleNewNote}
           />
         </Form>

@@ -71,7 +71,7 @@ export function Profile() {
 
         <Input placeholder="Nova senha" type="password" icon={FiLock} onChange={e => setPasswordNew(e.target.value)} />
 
-        <Button name="Salvar" onClick={handleUpdate} />
+        <Button title="Salvar" onClick={handleUpdate} />
       </Form>
     </Container>
   )
